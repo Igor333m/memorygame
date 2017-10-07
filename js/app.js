@@ -13,7 +13,12 @@ function new_game() {
  *   - add each card's HTML to the page
  */
 
-// Shuffle function from http://stackoverflow.com/a/2450976
+ 
+/**
+* @description Cards shuffle function
+* @param {array} array of cards to shuffle
+* @returns {array} Returns shuffled array of cards
+ */
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
