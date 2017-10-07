@@ -1,7 +1,10 @@
-/*
- * Create a list that holds all of your cards
- */
 
+function new_game() {
+	// Create a list that holds all of your cards
+	let cards = ["diamond", "plane", "anchor", "bolt", "cube", "leaf", "bicycle", "bomb"];
+
+	return shuffle(cards);
+}
 
 /*
  * Display the cards on the page
@@ -24,7 +27,6 @@ function shuffle(array) {
 
     return array;
 }
-
 
 /*
  * set up the event listener for a card. If a card is clicked:
