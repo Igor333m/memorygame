@@ -1,19 +1,16 @@
-
-function new_game() {
-	// Create a list that holds all of your cards
-	let cards = ["diamond", "plane", "anchor", "bolt", "cube", "leaf", "bicycle", "bomb"];
-
-	return shuffle(cards);
-}
-
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+function display() {
+	// Create a list that holds all of your cards
+	let cards = ["diamond", "paper-plane-o", "anchor", "bolt", "cube", "leaf", "bicycle", "bomb"];
+	$(".deck li").empty().removeClass().addClass("card");
+	shuffle(cards);
+}
 
- 
 /**
 * @description Cards shuffle function
 * @param {array} array of cards to shuffle
