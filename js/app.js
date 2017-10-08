@@ -1,8 +1,6 @@
 /**
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
+ * @description Display the cards on the page, shuffle the list of cards using the shuffle method, loops through each li and create its HTML <i> with a random card
+ * @returns undefined
  */
 function display() {
 	// Create a list that holds all of your cards
@@ -11,6 +9,7 @@ function display() {
 	li.empty().removeClass().addClass("card");
 	// li.addClass("match");
 	shuffle(cards);
+	// loops thty each li and adds new card to it
 	li.each(function(index, li) {
 		let eachLi = $(li);
 		eachLi.append("<i class='fa fa-" + cards[index] + "'></i>");
