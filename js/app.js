@@ -35,6 +35,29 @@ function shuffle(array) {
     return array;
 }
 
+
+
+let Card = function(card) {
+	this.card = card;
+}
+
+function listOfOpenCards() {
+
+}
+
+function lockedOpenCards() {
+
+}
+
+function removeCard() {
+
+}
+
+let ClickCard = function(){
+	$(".deck li").click(function() {
+		return $(this).addClass("match");
+	});
+}
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
