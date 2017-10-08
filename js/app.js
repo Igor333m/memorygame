@@ -37,12 +37,14 @@ function shuffle(array) {
 
 
 
-let Card = function(card) {
-	this.card = card;
-}
 
-function listOfOpenCards() {
-
+function listOfOpenCards(card) {
+	let list = [];
+	if (list) {
+		list.forEach(function(element) {
+			
+		});
+	}
 }
 
 function lockedOpenCards() {
@@ -53,11 +55,12 @@ function removeCard() {
 
 }
 
-let ClickCard = function(){
-	$(".deck li").click(function() {
-		return $(this).addClass("match");
-	});
-}
+let clickCard =	$(".deck li").click(function() {
+	$(this).addClass("open").addClass("show");
+	console.log($(this).children("i").attr("class"));
+	return $(this);
+});
+
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
