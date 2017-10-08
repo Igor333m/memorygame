@@ -1,4 +1,4 @@
-/*
+/**
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
  *   - loop through each card and create its HTML
@@ -6,9 +6,15 @@
  */
 function display() {
 	// Create a list that holds all of your cards
-	let cards = ["diamond", "paper-plane-o", "anchor", "bolt", "cube", "leaf", "bicycle", "bomb"];
-	$(".deck li").empty().removeClass().addClass("card");
+	let cards = ["diamond", "paper-plane-o", "anchor", "bolt", "cube", "leaf", "bicycle", "bomb", "diamond", "paper-plane-o", "anchor", "bolt", "cube", "leaf", "bicycle", "bomb"];
+	let li = $(".deck li");
+	li.empty().removeClass().addClass("card");
+	// li.addClass("match");
 	shuffle(cards);
+	li.each(function(index, li) {
+		let eachLi = $(li);
+		eachLi.append("<i class='fa fa-" + cards[index] + "'></i>");
+	});
 }
 
 /**
