@@ -40,9 +40,12 @@ function shuffle(array) {
 // list of correctly guessed cards
 let cardList = [];
 
+// use to block multiple clicks
+let blockClick = false;
+
 function listOfOpenCards(card) {
 	card.addClass("open").addClass("show");
-	console.log(cardList.length);
+	console.log(cardList.length + " start");
 	if (cardList.length === 0 || (cardList.length % 2 === 0)) {
 		cardList.push(card);
 	}else {
@@ -51,15 +54,31 @@ function listOfOpenCards(card) {
 			lockedSameCards(cardList[cardList.length - 1], card);
 			cardList.push(card);
 		}else {
+			blockClick = true;
 			setTimeout(function() { 
-/*				console.log(cardList);
-				console.log(card);*/
+				blockClick = false;
 				removeCards(cardList[cardList.length - 1], card);
 			}, 1000);
 		}
 	}
-	//$(".deck li").on("click", clickCard());
-	//console.log(cardList);
+		console.log(cardList.length + " end");
+
+}
+/**
+* @description Block same card being clicked twice
+* @param {obj} Card being clicked
+* @returns {array} Returns undefined
+ */
+function sameCardClicked(card) {
+	if (cardList.length === 0) {
+		listOfOpenCards(card);
+	}else if (cardList.length !== 0 && cardList[cardList.length - 1].index() === card.index()){
+		console.log("return null");
+		return undefined;
+	}else {
+		console.log("ELSE");
+		listOfOpenCards(card);
+	}
 }
 
 function lockedSameCards(cardOne, cardTwo) {
@@ -74,9 +93,9 @@ function removeCards(cardOne, cardTwo) {
 }
 
 let clickCard =	$(".deck li").click(function() {
-	listOfOpenCards($(this));
-		console.log(cardList.length + ' clicked');
-
+	if (!blockClick) {
+		sameCardClicked($(this));
+	}
 });
 
 /*
