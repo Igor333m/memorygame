@@ -37,18 +37,24 @@ function shuffle(array) {
 
 
 
+let list = "";
 
 function listOfOpenCards(card) {
-	let list = [];
-	if (list) {
-		list.forEach(function(element) {
-			
-		});
+	if (list === "") {
+		list = card;
+		console.log(card.children("i").attr("class"));
+		console.log(list);
+	}else {
+		if (list.children("i").attr("class") === card.children("i").attr("class")) {
+			lockedOpenCards(list, card);
+			list = "";
+		}
 	}
 }
 
-function lockedOpenCards() {
-
+function lockedOpenCards(cardOne, cardTwo) {
+	cardOne.addClass("match");
+	cardTwo.addClass("match");
 }
 
 function removeCard() {
@@ -57,8 +63,8 @@ function removeCard() {
 
 let clickCard =	$(".deck li").click(function() {
 	$(this).addClass("open").addClass("show");
-	console.log($(this).children("i").attr("class"));
-	return $(this);
+	//console.log($(this).children("i").attr("class"));
+	listOfOpenCards($(this));
 });
 
 /*
