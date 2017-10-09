@@ -40,18 +40,29 @@ function shuffle(array) {
 let firstCard = "";
 
 function listOfOpenCards(card) {
+	card.addClass("open").addClass("show");
+				//console.log(card);
+
 	if (firstCard === "") {
 		firstCard = card;
-		console.log(card.children("i").attr("class"));
-		console.log(firstCard);
+		//console.log(card.children("i").attr("class"));
+		//console.log(firstCard);
 	}else {
 		if (firstCard.children("i").attr("class") === card.children("i").attr("class")) {
 			lockedOpenCards(firstCard, card);
 			firstCard = "";
 		}else {
-			card.addClass("open").addClass("show");
-			removeCards(firstCard, card);
-			firstCard = "";
+			
+
+			//firstCard.addClass("open").addClass("show");
+			//card.addClass("open").addClass("show");
+
+			setTimeout(function() { 
+				console.log(firstCard);
+				console.log(card);
+				removeCards($(firstCard), $(card));
+
+			}, 2000);
 		}
 	}
 }
@@ -64,10 +75,10 @@ function lockedOpenCards(cardOne, cardTwo) {
 function removeCards(cardOne, cardTwo) {
 	cardOne.removeClass("open").removeClass("show");
 	cardTwo.removeClass("open").removeClass("show");
+	firstCard = "";
 }
 
 let clickCard =	$(".deck li").click(function() {
-	$(this).addClass("open").addClass("show");
 	//console.log($(this).children("i").attr("class"));
 	listOfOpenCards($(this));
 });
