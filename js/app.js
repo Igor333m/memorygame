@@ -37,17 +37,21 @@ function shuffle(array) {
 
 
 
-let list = "";
+let firstCard = "";
 
 function listOfOpenCards(card) {
-	if (list === "") {
-		list = card;
+	if (firstCard === "") {
+		firstCard = card;
 		console.log(card.children("i").attr("class"));
-		console.log(list);
+		console.log(firstCard);
 	}else {
-		if (list.children("i").attr("class") === card.children("i").attr("class")) {
-			lockedOpenCards(list, card);
-			list = "";
+		if (firstCard.children("i").attr("class") === card.children("i").attr("class")) {
+			lockedOpenCards(firstCard, card);
+			firstCard = "";
+		}else {
+			card.addClass("open").addClass("show");
+			removeCards(firstCard, card);
+			firstCard = "";
 		}
 	}
 }
@@ -57,8 +61,9 @@ function lockedOpenCards(cardOne, cardTwo) {
 	cardTwo.addClass("match");
 }
 
-function removeCard() {
-
+function removeCards(cardOne, cardTwo) {
+	cardOne.removeClass("open").removeClass("show");
+	cardTwo.removeClass("open").removeClass("show");
 }
 
 let clickCard =	$(".deck li").click(function() {
