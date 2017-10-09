@@ -14,6 +14,7 @@ function display() {
 		let eachLi = $(li);
 		eachLi.append("<i class='fa fa-" + cards[index] + "'></i>");
 	});
+	cardList = [];
 }
 
 /**
@@ -36,28 +37,30 @@ function shuffle(array) {
 }
 
 
-
+// list of correctly guessed cards
 let cardList = [];
 
 function listOfOpenCards(card) {
 	card.addClass("open").addClass("show");
-	if (cardList.length === 0) {
-		console.log("hello");
+	console.log(cardList.length);
+	if (cardList.length === 0 || (cardList.length % 2 === 0)) {
 		cardList.push(card);
 	}else {
-		console.log(cardList[cardList.length - 1]);
+		//console.log(cardList);
 		if (cardList[cardList.length - 1].children("i").attr("class") === card.children("i").attr("class")) {
 			lockedSameCards(cardList[cardList.length - 1], card);
 			cardList.push(card);
 		}else {
 			setTimeout(function() { 
-				console.log(cardList);
-				console.log(card);
+/*				console.log(cardList);
+				console.log(card);*/
 				removeCards(cardList[cardList.length - 1], card);
 
 			}, 2000);
 		}
 	}
+	//console.log(cardList);
+
 }
 
 function lockedSameCards(cardOne, cardTwo) {
@@ -73,6 +76,8 @@ function removeCards(cardOne, cardTwo) {
 
 let clickCard =	$(".deck li").click(function() {
 	listOfOpenCards($(this));
+		console.log(cardList.length + ' clicked');
+
 });
 
 /*
