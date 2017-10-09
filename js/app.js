@@ -37,37 +37,30 @@ function shuffle(array) {
 
 
 
-let firstCard = "";
+let cardList = [];
 
 function listOfOpenCards(card) {
 	card.addClass("open").addClass("show");
-				//console.log(card);
-
-	if (firstCard === "") {
-		firstCard = card;
-		//console.log(card.children("i").attr("class"));
-		//console.log(firstCard);
+	if (cardList.length === 0) {
+		console.log("hello");
+		cardList.push(card);
 	}else {
-		if (firstCard.children("i").attr("class") === card.children("i").attr("class")) {
-			lockedOpenCards(firstCard, card);
-			firstCard = "";
+		console.log(cardList[cardList.length - 1]);
+		if (cardList[cardList.length - 1].children("i").attr("class") === card.children("i").attr("class")) {
+			lockedSameCards(cardList[cardList.length - 1], card);
+			cardList.push(card);
 		}else {
-			
-
-			//firstCard.addClass("open").addClass("show");
-			//card.addClass("open").addClass("show");
-
 			setTimeout(function() { 
-				console.log(firstCard);
+				console.log(cardList);
 				console.log(card);
-				removeCards($(firstCard), $(card));
+				removeCards(cardList[cardList.length - 1], card);
 
 			}, 2000);
 		}
 	}
 }
 
-function lockedOpenCards(cardOne, cardTwo) {
+function lockedSameCards(cardOne, cardTwo) {
 	cardOne.addClass("match");
 	cardTwo.addClass("match");
 }
@@ -75,11 +68,10 @@ function lockedOpenCards(cardOne, cardTwo) {
 function removeCards(cardOne, cardTwo) {
 	cardOne.removeClass("open").removeClass("show");
 	cardTwo.removeClass("open").removeClass("show");
-	firstCard = "";
+	cardList.pop();
 }
 
 let clickCard =	$(".deck li").click(function() {
-	//console.log($(this).children("i").attr("class"));
 	listOfOpenCards($(this));
 });
 
