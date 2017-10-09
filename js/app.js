@@ -55,12 +55,11 @@ function listOfOpenCards(card) {
 /*				console.log(cardList);
 				console.log(card);*/
 				removeCards(cardList[cardList.length - 1], card);
-
-			}, 2000);
+			}, 1000);
 		}
 	}
+	//$(".deck li").on("click", clickCard());
 	//console.log(cardList);
-
 }
 
 function lockedSameCards(cardOne, cardTwo) {
