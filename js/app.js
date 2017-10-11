@@ -4,6 +4,9 @@ let cardList = [];
 // use to block multiple clicks
 let blockClick = false;
 
+// Player moves counter
+let totalMoves = 0;
+
 /**
  * @description Display the cards on the page, shuffle the list of cards using the shuffle method, loops through each li and create its HTML <i> with a random card
  * @returns {undefined}
@@ -108,6 +111,7 @@ function removeCards(cardOne, cardTwo) {
 // Main card click event
 let clickCard =	$(".deck li").click(function() {
 	if (!blockClick) {
+		moves();
 		sameCardClicked($(this));
 	}
 });
@@ -117,11 +121,22 @@ let restartClick = $(".restart").click(function() {
 });
 
 /**
-* @descripton Restarts the game
+* @descripton Restarts the game, moves, stars and time
 * @returns {undefined}
 */
 function restartGame() {
-		display();
+	totalMoves = 0;
+	$(".moves").html(totalMoves);
+	display();
+}
+
+/**
+* @descripton Add the number of player moves to the counter
+* @returns {undefined}
+*/
+function moves() {
+	totalMoves += 1;
+	$(".moves").html(totalMoves);
 }
 
 // Game begins!
