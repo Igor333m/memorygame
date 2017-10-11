@@ -41,6 +41,7 @@ function shuffle(array) {
 
     return array;
 }
+
 /**
 * @description Add cards to cardList, locks matching cards and allows only two open cards ( and keeps them open for 1s )
 * @constructor
@@ -110,6 +111,22 @@ let clickCard =	$(".deck li").click(function() {
 		sameCardClicked($(this));
 	}
 });
+// Restart button
+let restartClick = $(".restart").click(function() {
+	restartGame()
+});
+
+/**
+* @descripton Restarts the game
+* @returns {undefined}
+*/
+function restartGame() {
+		display();
+}
+
+// Game begins!
+restartGame()
+
 
 /*
  * set up the event listener for a card. If a card is clicked:
