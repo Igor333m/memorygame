@@ -1,15 +1,20 @@
+// list of correctly guessed cards
+let cardList = [];
+
+// use to block multiple clicks
+let blockClick = false;
+
 /**
  * @description Display the cards on the page, shuffle the list of cards using the shuffle method, loops through each li and create its HTML <i> with a random card
- * @returns undefined
+ * @returns {undefined}
  */
 function display() {
 	// Create a list that holds all of your cards
 	let cards = ["diamond", "paper-plane-o", "anchor", "bolt", "cube", "leaf", "bicycle", "bomb", "diamond", "paper-plane-o", "anchor", "bolt", "cube", "leaf", "bicycle", "bomb"];
 	let li = $(".deck li");
 	li.empty().removeClass().addClass("card");
-	// li.addClass("match");
 	shuffle(cards);
-	// loops thty each li and adds new card to it
+	// loops through each li and adds new card to it
 	li.each(function(index, li) {
 		let eachLi = $(li);
 		eachLi.append("<i class='fa fa-" + cards[index] + "'></i>");
@@ -19,7 +24,8 @@ function display() {
 
 /**
 * @description Cards shuffle function
-* @param {array} array of cards to shuffle
+* @constructor
+* @param {array} array - Array of cards to shuffle
 * @returns {array} Returns shuffled array of cards
  */
 function shuffle(array) {
@@ -35,25 +41,22 @@ function shuffle(array) {
 
     return array;
 }
-
-
-// list of correctly guessed cards
-let cardList = [];
-
-// use to block multiple clicks
-let blockClick = false;
-
+/**
+* @description Add cards to cardList, locks matching cards and allows only two open cards ( and keeps them open for 1s )
+* @constructor
+* @param {object} card - jQuery obj that hold clicked li who represents the clicked card.
+* @returns {undefined}
+*/
 function listOfOpenCards(card) {
 	card.addClass("open").addClass("show");
-	console.log(cardList.length + " start");
 	if (cardList.length === 0 || (cardList.length % 2 === 0)) {
-		cardList.push(card);
+		cardList.push(card); // Only for first card
 	}else {
-		//console.log(cardList);
 		if (cardList[cardList.length - 1].children("i").attr("class") === card.children("i").attr("class")) {
 			lockedSameCards(cardList[cardList.length - 1], card);
 			cardList.push(card);
 		}else {
+			// blocks multiple clicks if two cards are selected and keeps them open for 1 second
 			blockClick = true;
 			setTimeout(function() { 
 				blockClick = false;
@@ -61,37 +64,47 @@ function listOfOpenCards(card) {
 			}, 1000);
 		}
 	}
-		console.log(cardList.length + " end");
-
 }
+
 /**
 * @description Block same card being clicked twice
-* @param {obj} Card being clicked
-* @returns {array} Returns undefined
+* @param {obj} card -  Card being clicked
+* @returns Returns {undefined}
  */
 function sameCardClicked(card) {
 	if (cardList.length === 0) {
 		listOfOpenCards(card);
 	}else if (cardList.length !== 0 && cardList[cardList.length - 1].index() === card.index()){
-		console.log("return null");
 		return undefined;
 	}else {
-		console.log("ELSE");
 		listOfOpenCards(card);
 	}
 }
 
+/**
+* @descripton Locks two identical cards into matching positions
+* @ param{object} cardOne - First clicked card
+* @ param{object} cardTwo - Second clicked card
+* @returns {undefined}
+*/
 function lockedSameCards(cardOne, cardTwo) {
 	cardOne.addClass("match");
 	cardTwo.addClass("match");
 }
 
+/**
+* @descripton Close two different cards and removes last clicked card from the list
+* @ param{object} cardOne - First clicked card
+* @ param{object} cardTwo - Second clicked card
+* @returns {undefined}
+*/
 function removeCards(cardOne, cardTwo) {
 	cardOne.removeClass("open").removeClass("show");
 	cardTwo.removeClass("open").removeClass("show");
 	cardList.pop();
 }
 
+// Main card click event
 let clickCard =	$(".deck li").click(function() {
 	if (!blockClick) {
 		sameCardClicked($(this));
