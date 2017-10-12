@@ -149,13 +149,13 @@ function moves() {
 function removeStars() {
 	let emptyStar = "<li><i class='fa fa-star-o'></i></li>";
 	switch (totalMoves) {
-		case 6:
+		case 22:
 			$(".stars li:last-child").replaceWith(emptyStar);
 			break;
-		case 10:
+		case 27:
 			$(".stars li:nth-child(2)").replaceWith(emptyStar);
 			break;
-		case 14:
+		case 32:
 			$(".stars li:first-child").replaceWith(emptyStar);
 			break;
 	}
