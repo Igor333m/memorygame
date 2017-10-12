@@ -8,7 +8,7 @@ let blockClick = false;
 let totalMoves = 0;
 
 /**
- * @description Display the cards on the page, shuffle the list of cards using the shuffle method, loops through each li and create its HTML <i> with a random card
+ * @description Display the cards on the page, shuffle the list of cards using the shuffle method, loops through each li and create its HTML <i> with a random card. Resets to full stars.
  * @returns {undefined}
  */
 function display() {
@@ -23,6 +23,7 @@ function display() {
 		eachLi.append("<i class='fa fa-" + cards[index] + "'></i>");
 	});
 	cardList = [];
+	fullStars();
 }
 
 /**
@@ -160,7 +161,13 @@ function removeStars() {
 	}
 }
 
-
+/**
+* @descripton Resets all stars to full stars
+* @returns {undefined}
+*/
+function fullStars() {
+	$("<i class='fa fa-star'></i>").replaceAll(".fa-star-o");
+}
 
 
 // Game begins!
