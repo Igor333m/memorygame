@@ -113,6 +113,8 @@ let clickCard =	$(".deck li").click(function() {
 	if (!blockClick) {
 		moves();
 		sameCardClicked($(this));
+		removeStars();
+
 	}
 });
 // Restart button
@@ -139,9 +141,30 @@ function moves() {
 	$(".moves").html(totalMoves);
 }
 
+/**
+* @descripton Remove third star after 24 moves and second after 28 moves.
+* @returns {undefined}
+*/
+function removeStars() {
+	let emptyStar = "<li><i class='fa fa-star-o'></i></li>";
+	switch (totalMoves) {
+		case 6:
+			$(".stars li:last-child").replaceWith(emptyStar);
+			break;
+		case 10:
+			$(".stars li:nth-child(2)").replaceWith(emptyStar);
+			break;
+		case 14:
+			$(".stars li:first-child").replaceWith(emptyStar);
+			break;
+	}
+}
+
+
+
+
 // Game begins!
 restartGame()
-
 
 /*
  * set up the event listener for a card. If a card is clicked:
