@@ -7,6 +7,9 @@ let blockClick = false;
 // Player moves counter
 let totalMoves = 0;
 
+// Timer start
+let time = 0;
+
 /**
  * @description Display the cards on the page, shuffle the list of cards using the shuffle method, loops through each li and create its HTML <i> with a random card. Resets to full stars.
  * @returns {undefined}
@@ -129,8 +132,11 @@ let restartClick = $(".restart").click(function() {
 */
 function restartGame() {
 	totalMoves = 0;
+	time = 0;
 	$(".moves").html(totalMoves);
 	display();
+	timePassed;
+	timer(time);
 }
 
 /**
@@ -169,6 +175,20 @@ function fullStars() {
 	$("<i class='fa fa-star'></i>").replaceAll(".fa-star-o");
 }
 
+/**
+* @descripton Timer for game
+* @returns {ternary}
+*/
+function timer ( val ) { return val > 9 ? val : "0" + val; }
+
+let timePassed = setInterval( function(){
+	$("#seconds").html(timer(++time%60));
+	$("#minutes").html(timer(parseInt(time/60,10)));
+}, 1000);
+
+function clearTimer() {
+	clearInterval ( timePassed );
+}
 
 // Game begins!
 restartGame()
