@@ -128,7 +128,6 @@ let clickCard =	$(".deck li").click(function() {
 
 // Restart button
 let restartClick = $(".restart").click(function() {
-	console.log("restart");
 	restartGame();
 });
 
@@ -210,7 +209,7 @@ function clearTimer() {
 }
 
 /**
-* @descripton If cardList contains 16 elements, game ends
+* @descripton If cardList contains 16 elements, game will end
 * @returns {undefined}
 */
 function gameWon() {

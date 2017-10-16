@@ -85,7 +85,6 @@ h1 {
 /*
  * Styles for the Score Panel
  */
-
 .score-panel {
     text-align: left;
     width: 345px;
@@ -120,7 +119,9 @@ h1 {
     position: fixed;
 }
 
-
+/*
+ * Styles for the modal
+ */
 .modal div {
     margin: auto;
     position: absolute;
