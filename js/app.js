@@ -10,6 +10,8 @@ let totalMoves = 0;
 // Timer start
 let time = 0;
 
+
+
 /**
  * @description Display the cards on the page, shuffle the list of cards using the shuffle method, loops through each li and create its HTML <i> with a random card. Resets to full stars.
  * @returns {undefined}
@@ -198,6 +200,10 @@ function clearTimer() {
 * @returns {undefined}
 */
 function gameWon() {
+	clearTimer();
+	$("#winMoves").html(totalMoves);
+	$("#winStars").html();
+	$("#winSeconds").html(time);
 	$(".modal").show();
 }
 
