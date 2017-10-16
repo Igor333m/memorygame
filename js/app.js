@@ -101,8 +101,12 @@ function sameCardClicked(card) {
 * @returns {undefined}
 */
 function lockedSameCards(cardOne, cardTwo) {
-	cardOne.addClass("match");
-	cardTwo.addClass("match");
+	cardOne.transition({scale: 1.4}, function() {
+		cardOne.transition({scale: 1.0});
+	}).addClass("match");
+	cardTwo.transition({scale: 1.4}, function() {
+		cardTwo.transition({scale: 1.0});
+	}).addClass("match");
 }
 
 /**
