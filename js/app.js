@@ -144,8 +144,7 @@ function restartGame() {
 	$(".moves").html(totalMoves);
 	display();
 	$(".modal").hide();
-	timePassed();
-	timer(time);
+	timePassed;
 }
 
 /**
@@ -193,12 +192,10 @@ function fullStars() {
 */
 function timer ( val ) { return val > 9 ? val : "0" + val; }
 
-function timePassed(){
-	setInterval( function(){
-		$("#seconds").html(timer(++time%60));
-		$("#minutes").html(timer(parseInt(time/60,10)));
-	}, 1000);
-}
+let timePassed = setInterval( function(){
+	$("#seconds").html(timer(++time%60));
+	$("#minutes").html(timer(parseInt(time/60,10)));
+}, 1000);
 
 function clearTimer() {
 	clearInterval ( timePassed );
@@ -209,7 +206,6 @@ function clearTimer() {
 * @returns {undefined}
 */
 function gameWon() {
-	clearTimer();
 	$("#winMoves").html(totalMoves);
 	$("#winStars").html(totalStars);
 	$("#winSeconds").html(time);
