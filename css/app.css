@@ -125,6 +125,22 @@ h1 {
 .modal div {
     margin: auto;
     position: absolute;
-    top: 40%;
+    top: 20%;
     width: 100%;
+}
+
+
+.done {
+    margin: auto;
+    margin-bottom: -5%;
+    border: 1px solid red;
+    width: 210px;
+    height: 200px;
+    background:url(../img/greencheckmark.png) no-repeat;
+    background-position: 0 0;
+}
+.done:hover {
+    background-position: -7980px 0;
+    transition: background .6s steps(38);
+    cursor:pointer;
 }
