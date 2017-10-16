@@ -75,7 +75,7 @@ function listOfOpenCards(card) {
 }
 
 /**
-* @description Block same card being clicked twice
+* @description Adds first clicked card, block same card being clicked twice, call listOfOpenCards on different card click and checks if the game is won.
 * @param {obj} card -  Card being clicked
 * @returns Returns {undefined}
  */
@@ -198,8 +198,7 @@ function clearTimer() {
 * @returns {undefined}
 */
 function gameWon() {
-	$(".modal").show(1200);
-	console.log("HEEEEY");
+	$(".modal").show();
 }
 
 // Game begins!
