@@ -143,6 +143,9 @@ function restartGame() {
 	display();
 	$(".modal").hide();
 	timePassed;
+	// Set win checker to start position
+	$(".checker").transition({
+		"background-position": "0 0"});
 }
 
 /**
@@ -215,6 +218,10 @@ function gameWon() {
 	$("#winStars").html(totalStars);
 	$("#winSeconds").html(time);
 	$(".modal").show();
+	// Trigger checker transition using jQuery Transit plugin
+	$(".checker").transition({
+		"background-position": "-7980px 0",
+    	transition: "background .6s steps(38)"});
 }
 
 // Game begins!
