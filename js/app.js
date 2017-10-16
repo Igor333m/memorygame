@@ -221,7 +221,7 @@ function gameWon() {
 	// Trigger checker transition using jQuery Transit plugin
 	$(".checker").transition({
 		"background-position": "-7980px 0",
-    	transition: "background .6s steps(38)"});
+    	transition: "background 1s steps(38)"});
 }
 
 // Game begins!
