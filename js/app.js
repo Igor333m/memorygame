@@ -130,7 +130,8 @@ let clickCard =	$(".deck li").click(function() {
 
 // Restart button
 let restartClick = $(".restart").click(function() {
-	restartGame()
+	console.log("restart");
+	restartGame();
 });
 
 /**
@@ -141,8 +142,9 @@ function restartGame() {
 	totalMoves = 0;
 	time = 0;
 	$(".moves").html(totalMoves);
-	//display();
-	timePassed;
+	display();
+	$(".modal").hide();
+	timePassed();
 	timer(time);
 }
 
@@ -191,10 +193,12 @@ function fullStars() {
 */
 function timer ( val ) { return val > 9 ? val : "0" + val; }
 
-let timePassed = setInterval( function(){
-	$("#seconds").html(timer(++time%60));
-	$("#minutes").html(timer(parseInt(time/60,10)));
-}, 1000);
+function timePassed(){
+	setInterval( function(){
+		$("#seconds").html(timer(++time%60));
+		$("#minutes").html(timer(parseInt(time/60,10)));
+	}, 1000);
+}
 
 function clearTimer() {
 	clearInterval ( timePassed );
