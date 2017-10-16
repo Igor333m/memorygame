@@ -10,6 +10,8 @@ let totalMoves = 0;
 // Timer start
 let time = 0;
 
+// Total stars
+let totalStars = 3;
 
 
 /**
@@ -162,12 +164,15 @@ function removeStars() {
 	switch (totalMoves) {
 		case 22:
 			$(".stars li:last-child").replaceWith(emptyStar);
+			totalStars = 2;
 			break;
 		case 27:
 			$(".stars li:nth-child(2)").replaceWith(emptyStar);
+			totalStars = 1;
 			break;
-		case 32:
+		case 34:
 			$(".stars li:first-child").replaceWith(emptyStar);
+			totalStars = 0;
 			break;
 	}
 }
@@ -202,7 +207,7 @@ function clearTimer() {
 function gameWon() {
 	clearTimer();
 	$("#winMoves").html(totalMoves);
-	$("#winStars").html();
+	$("#winStars").html(totalStars);
 	$("#winSeconds").html(time);
 	$(".modal").show();
 }
