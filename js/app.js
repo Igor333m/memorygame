@@ -87,6 +87,9 @@ function sameCardClicked(card) {
 	}else {
 		listOfOpenCards(card);
 	}
+	if (cardList.length === 16) {
+		gameWon();
+	}
 }
 
 /**
@@ -118,9 +121,9 @@ let clickCard =	$(".deck li").click(function() {
 		moves();
 		sameCardClicked($(this));
 		removeStars();
-
 	}
 });
+
 // Restart button
 let restartClick = $(".restart").click(function() {
 	restartGame()
@@ -134,7 +137,7 @@ function restartGame() {
 	totalMoves = 0;
 	time = 0;
 	$(".moves").html(totalMoves);
-	display();
+	//display();
 	timePassed;
 	timer(time);
 }
@@ -188,6 +191,15 @@ let timePassed = setInterval( function(){
 
 function clearTimer() {
 	clearInterval ( timePassed );
+}
+
+/**
+* @descripton If cardList contains 16 elements, game ends
+* @returns {undefined}
+*/
+function gameWon() {
+	$(".modal").show(1200);
+	console.log("HEEEEY");
 }
 
 // Game begins!
