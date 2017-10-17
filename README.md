@@ -3,9 +3,9 @@ Memory Game is a game where you need to match pairs of tiles. Turn over one tile
 
 ## Table of Contents
 
-* [Link to a game on github Pages](#gamelink)
-* [Game Preview](#gamepreview)
-* [Description of this classic game on Wikipedia](#fromWikipedia,thefreeencyclopedia)
+* [Link to a game on github Pages](#game-link)
+* [Game Preview](#game-preview)
+* [Description of this classic game on Wikipedia](#from-wikipedia-the-free-encyclopedia)
 * [Game implementation](#implementation)
 
 ## Game link
