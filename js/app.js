@@ -95,7 +95,7 @@ function sameCardClicked(card) {
 }
 
 /**
-* @descripton Locks two identical cards into matching positions
+* @descripton Locks two identical cards into matching positions with transition plugin
 * @ param{object} cardOne - First clicked card
 * @ param{object} cardTwo - Second clicked card
 * @returns {undefined}
@@ -116,8 +116,8 @@ function lockedSameCards(cardOne, cardTwo) {
 * @returns {undefined}
 */
 function removeCards(cardOne, cardTwo) {
-	cardOne.removeClass("open").removeClass("show");
-	cardTwo.removeClass("open").removeClass("show");
+	cardOne.removeClass("open show");
+	cardTwo.removeClass("open show");;
 	cardList.pop();
 }
 
