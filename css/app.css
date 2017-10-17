@@ -87,13 +87,15 @@ h1 {
  */
 .score-panel {
     text-align: left;
-    width: 345px;
-    margin-bottom: 10px;
+    width: 660px;
+    border-bottom-style: solid;
+    border-bottom-color: #e5e5e5;
+    margin-bottom: 20px;
 }
 
 .score-panel .stars {
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 8%;
     display: inline-block;
     margin: 0 5px 0 0;
 }
@@ -104,6 +106,7 @@ h1 {
 }
 
 .score-panel .restart {
+    padding: 0 8% 0 0;
     float: right;
     cursor: pointer;
 }
