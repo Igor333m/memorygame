@@ -14,7 +14,7 @@ https://igor333m.github.io/memorygame/
 
 ## Game preview
 
-![Memory Game Preview](img/matching game.png)
+![Memory Game Preview](img/matchingGame.png)
 
 ## From Wikipedia, the free encyclopedia
 
