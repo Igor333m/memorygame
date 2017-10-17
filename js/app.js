@@ -191,13 +191,13 @@ function fullStars() {
 }
 
 /**
-* @descripton Visual timer for html
+* @descripton Visual timer for html / taken from (https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript/5517836)
 * @returns {ternary}
 */
 function timer ( val ) { return val > 9 ? val : "0" + val; }
 
 /**
-* @description Game timer
+* @description Game timer / taken from (https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript/5517836)
 * @returns The ID value returned by setInterval() is used as the parameter for the clearInterval() method.
 */
 let timePassed = setInterval( function(){
