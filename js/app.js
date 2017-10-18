@@ -177,10 +177,6 @@ function removeStars() {
 			$(".stars li:nth-child(2)").replaceWith(emptyStar);
 			totalStars = 1;
 			break;
-		case 34:
-			$(".stars li:first-child").replaceWith(emptyStar);
-			totalStars = 0;
-			break;
 	}
 }
 
