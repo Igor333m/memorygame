@@ -85,7 +85,7 @@ function sameCardClicked(card) {
 	if (cardList.length === 0) {
 		listOfOpenCards(card);
 	}else if (cardList.length !== 0 && cardList[cardList.length - 1].index() === card.index()){
-		return undefined;
+		return true;
 	}else {
 		listOfOpenCards(card);
 	}
@@ -124,8 +124,10 @@ function removeCards(cardOne, cardTwo) {
 // Main card click event
 let clickCard =	$(".deck li").click(function() {
 	if (!blockClick) {
-		moves();
-		sameCardClicked($(this));
+		let stopMoves = sameCardClicked($(this));
+		if (!stopMoves) {
+			moves();
+		}
 		removeStars();
 	}
 });
