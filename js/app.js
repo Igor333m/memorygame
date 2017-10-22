@@ -77,8 +77,9 @@ function listOfOpenCards(card) {
 }
 
 /**
-* @description Adds first clicked card, block same card being clicked twice, call listOfOpenCards on different card click and checks if the game is won.
-* @param {obj} card -  Card being clicked
+* @description Adds first clicked card, block same card being clicked twice,
+call listOfOpenCards on different card click and checks if the game is won.
+* @param {obj} card - Card being clicked
 * @returns Returns {undefined}
  */
 function sameCardClicked(card) {
