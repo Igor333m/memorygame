@@ -82,6 +82,34 @@ h1 {
     font-size: 33px;
 }
 
+.deck .card.not-match {
+    background-color: red;
+    animation-name: bad-guess;
+    animation-duration: 1s;
+}
+
+@keyframes bad-guess {
+    0% {
+        
+    }
+    25% {
+        transform-origin: center bottom;
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform-origin: center bottom;
+        transform: rotate(20deg);
+    }
+    75% {
+        transform-origin: center bottom;
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform-origin: center bottom;
+        transform: rotate(10deg);
+    }
+}
+
 /*
  * Styles for the Score Panel
  */

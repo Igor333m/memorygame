@@ -68,6 +68,8 @@ function listOfOpenCards(card) {
 		}else {
 			// blocks multiple clicks if two cards are selected and keeps them open for 1 second
 			blockClick = true;
+			card.addClass("not-match");
+			cardList[cardList.length - 1].addClass("not-match");
 			setTimeout(function() { 
 				blockClick = false;
 				removeCards(cardList[cardList.length - 1], card);
@@ -117,8 +119,8 @@ function lockedSameCards(cardOne, cardTwo) {
 * @returns {undefined}
 */
 function removeCards(cardOne, cardTwo) {
-	cardOne.removeClass("open show");
-	cardTwo.removeClass("open show");;
+	cardOne.removeClass("open show not-match");
+	cardTwo.removeClass("open show not-match");;
 	cardList.pop();
 }
 
