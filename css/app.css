@@ -33,6 +33,10 @@ h1 {
     font-weight: 300;
 }
 
+.stars .fa {
+    color: gold;
+}
+
 /*
  * Styles for the deck of cards
  */
@@ -139,7 +143,11 @@ h1 {
     cursor: pointer;
 }
 
-.modal {
+
+/*
+ * Styles for the end game modal
+ */
+ .modal {
     display: none;
     text-align: center;
     left: 0;
@@ -150,9 +158,6 @@ h1 {
     position: fixed;
 }
 
-/*
- * Styles for the modal
- */
 .modal div {
     margin: auto;
     position: absolute;
