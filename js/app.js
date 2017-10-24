@@ -166,19 +166,52 @@ function moves() {
 }
 
 /**
-* @descripton Remove third star after 24 moves and second after 28 moves.
+* @descripton Remove stars bu halves after number of moves
 * @returns {undefined}
 */
 function removeStars() {
 	let emptyStar = "<li><i class='fa fa-star-o'></i></li>";
+	let halfStar = "<li><i class='fa fa-star-half-o'></i></li>";
 	switch (totalMoves) {
+		case 20:
+			$(".stars li:last-child").replaceWith(halfStar);
+			totalStars = 4.5;
+			break;
 		case 22:
 			$(".stars li:last-child").replaceWith(emptyStar);
+			totalStars = 4;
+			break;
+		case 24:
+			$(".stars li:nth-child(4)").replaceWith(halfStar);
+			totalStars = 3.5;
+			break;
+		case 26:
+			$(".stars li:nth-child(4)").replaceWith(emptyStar);
+			totalStars = 3;
+			break;
+		case 28:
+			$(".stars li:nth-child(3)").replaceWith(halfStar);
+			totalStars = 2.5;
+			break;
+		case 30:
+			$(".stars li:nth-child(3)").replaceWith(emptyStar);
 			totalStars = 2;
 			break;
-		case 27:
+		case 32:
+			$(".stars li:nth-child(2)").replaceWith(halfStar);
+			totalStars = 1.5;
+			break;
+		case 34:
 			$(".stars li:nth-child(2)").replaceWith(emptyStar);
 			totalStars = 1;
+			break;
+		case 36:
+			$(".stars li:nth-child(1)").replaceWith(halfStar);
+			totalStars = 0.5;
+			break;
+		case 38:
+			$(".stars li:nth-child(1)").replaceWith(emptyStar);
+			totalStars = 0;
 			break;
 	}
 }
