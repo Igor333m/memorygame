@@ -11,7 +11,7 @@ let totalMoves = 0;
 let time = 0;
 
 // Total stars
-let totalStars = 3;
+let totalStars = 5;
 
 /**
  * @description Display the cards on the page, shuffle the list of cards using the shuffle method, loops through each li and create its HTML <i> with a random card. Resets to full stars.
@@ -221,7 +221,11 @@ function removeStars() {
 * @returns {undefined}
 */
 function fullStars() {
-	$("<i class='fa fa-star'></i>").replaceAll(".fa-star-o");
+	console.log("Starssss");
+	$("i.fa fa-star-o").html("<i class='fa fa-star><i>");
+	$("i.fa fa-star-half-o").html("<i class='fa fa-star><i>");
+	$(".stars li i").removeClass("fa-star-o").addClass("fa-star");
+	$(".stars li i").removeClass("fa-star-half-o").addClass("fa-star");
 }
 
 /**
