@@ -93,6 +93,8 @@ function sameCardClicked(card) {
 		listOfOpenCards(card);
 	}
 	if (cardList.length === 16) {
+		moves();
+		removeStars();
 		gameWon();
 	}
 }
