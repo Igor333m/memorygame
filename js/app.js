@@ -21,6 +21,7 @@ function display() {
 	// Create a list that holds all of your cards
 	let cards = ["diamond", "paper-plane-o", "anchor", "bolt", "cube", "leaf", "bicycle", "bomb", "diamond", "paper-plane-o", "anchor", "bolt", "cube", "leaf", "bicycle", "bomb"];
 	let li = $(".deck li");
+	li.removeAttr("style")
 	li.empty().removeClass().addClass("card");
 	shuffle(cards);
 	// loops through each li and adds new card to it
@@ -223,7 +224,7 @@ function removeStars() {
 * @returns {undefined}
 */
 function fullStars() {
-	console.log("Starssss");
+	totalStars = 5;
 	$("i.fa fa-star-o").html("<i class='fa fa-star><i>");
 	$("i.fa fa-star-half-o").html("<i class='fa fa-star><i>");
 	$(".stars li i").removeClass("fa-star-o").addClass("fa-star");
