@@ -192,3 +192,52 @@ button:hover {
     border-top-color: #cecece;
     border-left-color: #cecece;
 }
+
+/* Hall of fame modal*/
+
+.hallOfFame {
+    display: none;
+    text-align: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: fixed;
+}
+
+.hallOfFame div {
+    margin: auto;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+}
+
+header {
+    margin: 0 5%;
+    display: inline;
+    color: gold;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-shadow: 0.1rem 0.1rem rgba(0,9,102,0.1);
+
+}
+table {
+  width: 90%;
+  margin: auto;
+  text-align: center;         
+}
+tr th {
+  text-align: inherit;
+  font-style: italic;
+}
+tr:nth-child(even) {
+  background-color: gold;
+}
+
+.HFbuttons {
+    margin-top: 5%;
+}
+.HFbuttons button:first-child {
+    margin-right: 3rem;
+}
