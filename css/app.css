@@ -196,7 +196,7 @@ button:hover {
 /* Hall of fame modal*/
 
 .hallOfFame {
-    display: none;
+    /*display: none;*/
     text-align: center;
     left: 0;
     top: 0;
@@ -204,29 +204,26 @@ button:hover {
     height: 100%;
     background-color: white;
     position: fixed;
-}
-
-.hallOfFame div {
     margin: auto;
-    position: absolute;
-    top: 10%;
-    width: 100%;
 }
 
 .HFModalHeader {
-    margin: 0 5%;
+    padding: 5% 5%;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+}
+.HFModalHeader h1 {
     display: inline;
     color: gold;
     text-transform: uppercase;
-    text-decoration: underline;
     text-shadow: 0.1rem 0.1rem rgba(0,9,102,0.1);
+}
 
-}
 table {
-  width: 90%;
+  width: 100%;
   margin: auto;
-  text-align: center;         
+  text-align: center;
 }
+
 tr th {
   text-align: inherit;
   font-style: italic;

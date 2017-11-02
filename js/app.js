@@ -268,5 +268,27 @@ function gameWon() {
     	transition: "background 1s steps(38)"});
 }
 
+/**
+* @descripton Add table enumeration
+*/
+let addNumeration = function(cl){
+  let table = document.querySelector('table.' + cl)
+  let trs = table.querySelectorAll('tr')
+  let counter = 1
+  
+  Array.prototype.forEach.call(trs, function(x,i){
+    let firstChild = x.children[0]
+    if (firstChild.tagName === 'TD') {
+      let cell = document.createElement('td')
+      cell.textContent = counter ++
+      x.insertBefore(cell,firstChild)
+    } else {
+      firstChild.setAttribute('colspan',2)
+    }
+  })
+}
+
+addNumeration("numbering");
+
 // Game begins!
 restartGame();
