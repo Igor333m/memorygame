@@ -213,7 +213,7 @@ button:hover {
     width: 100%;
 }
 
-header {
+.HFModalHeader {
     margin: 0 5%;
     display: inline;
     color: gold;
