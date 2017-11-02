@@ -174,7 +174,7 @@ h1 {
     background-position: 0 0;
 }
 
-button.restart {
+button {
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 1% 2%;
     border-radius: 10px;
@@ -185,7 +185,7 @@ button.restart {
     box-shadow: 3px 3px 5px 0px rgba(0,9,102,0.6);
 }
 
-button.restart:hover {
+button:hover {
     background: linear-gradient(160deg, #aa7ecd 0%, #02ccba 100%);
     color: #e5e5e5;
     border: 3px solid #e5e5e5;
