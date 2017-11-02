@@ -196,7 +196,7 @@ button:hover {
 /* Hall of fame modal*/
 
 .hallOfFame {
-    /*display: none;*/
+    display: none;
     text-align: center;
     left: 0;
     top: 0;
@@ -205,6 +205,7 @@ button:hover {
     background-color: white;
     position: fixed;
     margin: auto;
+    overflow: scroll;
 }
 
 .HFModalHeader {
