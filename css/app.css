@@ -125,14 +125,14 @@ h1 {
     margin-bottom: 20px;
 }
 
-.score-panel .stars {
+.stars {
     margin: 0;
     padding: 0 0 0 8%;
     display: inline-block;
     margin: 0 5px 0 0;
 }
 
-.score-panel .stars li {
+.stars li {
     list-style: none;
     display: inline-block;
 }
@@ -219,17 +219,31 @@ button:hover {
 }
 
 table {
-  width: 100%;
-  margin: auto;
-  text-align: center;
+    width: 100%;
+    padding: 1rem 0;
+    margin: auto;
+    text-align: center;
+}
+
+tr {
+    height: 35px;
 }
 
 tr th {
-  text-align: inherit;
-  font-style: italic;
+    text-align: inherit;
+    font-style: italic;
 }
-tr:nth-child(even) {
-  background-color: gold;
+
+tr:nth-child(odd) {
+    background-color: gold;
+}
+
+tr:nth-child(odd) .stars .fa {
+    color: white;
+}
+
+.numbering .tableHeader {
+    background-color: white;
 }
 
 .HFbuttons {
@@ -238,3 +252,8 @@ tr:nth-child(even) {
 .HFbuttons button:first-child {
     margin-right: 3rem;
 }
+
+.numbering .stars:nth-child(even) .fa {
+    color: white;
+}
+
