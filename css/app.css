@@ -196,7 +196,7 @@ button:hover {
 /* Hall of fame modal*/
 
 .hallOfFame {
-    /*display: none;*/
+    display: none;
     text-align: center;
     left: 0;
     top: 0;
