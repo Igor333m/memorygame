@@ -31,7 +31,7 @@ https://igor333m.github.io/memorygame/
 
 ## Implementation
 
-At the beginning of the game, timer starts to count time needed to finish the game. Game displays 3 stars rating, after some number of moves, game is removing the stars. It also count the number of moves needed to finish the game.
+At the beginning of the game, timer starts to count time needed to finish the game. Game displays 5 stars rating, after some number of moves, game is removing the stars. It also count the number of moves needed to finish the game.
 ***
 You can restart the game (shuffles the cards, restart star rating, time and moves) at any time using restart button.
 At the and of the game, modal is displayed with results.
